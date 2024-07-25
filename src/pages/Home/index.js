@@ -12,7 +12,7 @@ function Home() {
             const response = await api.get('/movie/now_playing', {
                 params: {
                     api_key: '078d0a638a1a05ed7822bf6005d9bda4',
-                    language: 'pt-br',
+                    language: 'pt-BR',
                     page: 1,
                 }
             })
