@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './favoritos.css';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 
 function Favoritos() {
 
@@ -11,9 +11,20 @@ function Favoritos() {
         setFilmes(JSON.parse(minhaLista) || []);
     }, []);
 
+    function excluirFilme(id) {
+        let filtroFilmes = filmes.filter((item) => {
+            return (item.id !== id)
+        })
+
+        setFilmes(filtroFilmes);
+        localStorage.setItem('@superFlix', JSON.stringify(filtroFilmes))
+    }
+
     return (
         <div className='meus-filmes'>
             <h1>Meus filmes favoritos</h1>
+
+            {filmes.length === 0 && <span>Você não possui nenhum filme salvo!</span>}
 
             <ul>
                 {filmes.map((item) => {
@@ -24,7 +35,7 @@ function Favoritos() {
                                 <Link to={`/filme/${item.id}`}>
                                     Ver detalhes
                                 </Link>
-                                <button>
+                                <button onClick={() => excluirFilme(item.id)}>
                                     Excluir da lista
                                 </button>
                             </div>
