@@ -1,4 +1,6 @@
 import './filme-info.css';
+import { toast } from 'react-toastify';
+
 
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -35,7 +37,7 @@ function Filme() {
         }
     }, [navigate, id])
 
-    function salvarFilme(){
+    function salvarFilme() {
         const minhaLista = localStorage.getItem("@superFlix");
 
         let filmesSalvos = JSON.parse(minhaLista) || [];
@@ -43,13 +45,13 @@ function Filme() {
         const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)
 
         if (hasFilme) {
-            alert("Este filme já está na sua lista");
+            toast.warning("Este filme já está na sua lista!")
             return;
         }
 
         filmesSalvos.push(filme);
         localStorage.setItem("@superFlix", JSON.stringify(filmesSalvos))
-        alert("Filme salvo com sucesso!")
+        toast.success("Filme salvo com sucesso!");
 
     }
 
