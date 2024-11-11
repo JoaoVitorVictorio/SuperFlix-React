@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.b79f770c.css",
-    "main.js": "/static/js/main.ccf0c5fd.js",
-    "index.html": "/index.html",
-    "main.b79f770c.css.map": "/static/css/main.b79f770c.css.map",
-    "main.ccf0c5fd.js.map": "/static/js/main.ccf0c5fd.js.map"
+    "main.css": "/SuperFlix-React/static/css/main.b79f770c.css",
+    "main.js": "/SuperFlix-React/static/js/main.ccf0c5fd.js",
+    "index.html": "/SuperFlix-React/index.html",
+    "main.b79f770c.css.map": "/SuperFlix-React/static/css/main.b79f770c.css.map",
+    "main.ccf0c5fd.js.map": "/SuperFlix-React/static/js/main.ccf0c5fd.js.map"
   },
   "entrypoints": [
     "static/css/main.b79f770c.css",
